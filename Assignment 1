@@ -1,1 +1,24 @@
-
+student_list=["raman","rahul","pall","Anurag","Palak"]
+student_tuple=("raman","rahul","pall","Anurag","Palak")
+student_dict={
+    1:"raman",
+    2:"rahul",
+    3:"pall",
+    4:"Anurag",
+    5:"Palak",
+    }
+print(student_list)
+print(student_tuple)
+print(student_dict)
+#to add,remove,rename in dict.
+student_dict[6]="rohit"
+print(student_dict)
+student_dict[6]="rohit singh"
+print(student_dict)
+del student_dict[2]
+print(student_dict)
+#to add and remove in list
+student_list.append("rohit")
+print(student_list)
+student_list.remove("raman")
+print(student_list)
