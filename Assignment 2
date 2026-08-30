@@ -1,1 +1,16 @@
+a=float(input("enter a: "))
+b=float(input("enter b : "))
+c=float(input("enter c : "))
+if a>=b and a>=c:
+    if a==b:
+        print("greater number is a and b : ",a)
+    else:
+            print("greater numbr is a: ",a)
+elif b>=a and b>=c:
+    if b==c:
+        print("greater number is b and c : ",b)
+    else:
+            print("greater number is b : ",b)
+else:
+    print("greater number is c : ",c)
 
