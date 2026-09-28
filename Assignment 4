@@ -1,0 +1,29 @@
+#assignment 4 using numpy
+import numpy as np
+arr1=np.array([[1,2,3,4],[5,6,7,8]])
+arr2=np.array([[5,6,7,8],[1,2,3,4]])
+print(arr1)
+print(arr2)
+print("addition: \n",arr1+arr2)
+
+
+#assignment 4
+matrix1=[[1,2,3,4],
+[5,6,7,8]]
+matrix2=[[7,8,9,10],
+[11,12,13,14]]
+result=[[0,0,0,0],
+[0,0,0,0]]
+
+for i in range(len(matrix1)):
+    for j in range(len(matrix2[0])):
+        result[i][j]=matrix1[i][j]+matrix2[i][j]
+print("matrix1: ")
+for row in matrix1:
+    print(row)
+print("matrix2:")
+for row in matrix2:
+    print(row)
+print("sum is: ")
+for row in result:
+    print(row)
