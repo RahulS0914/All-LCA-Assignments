@@ -1,5 +1,5 @@
 def right_triangle(a,b,c):
-    if a*a+b*b==c*c:
+    if a*a+b*b==c*c or a*a+c*c==b*b or b*b+c*c==a*a:
         print("right angle triangle")
     else:
         print("not right angle triangle")
