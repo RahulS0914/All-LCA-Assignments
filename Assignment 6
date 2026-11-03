@@ -1,0 +1,26 @@
+import pandas as pd
+df = pd.read_csv(r"C:\Users\Dell\Downloads\Titanic-Dataset.csv")
+df
+
+#Dataset Dimension   #display (rows,columns)
+print("Shape: ")
+df.shape
+
+#Column names and data types
+print("Columns: ")
+df.columns
+
+print("datatypes: ")
+df.dtypes
+
+#STATISTICAL SUMMARY
+print("statistical summary: ")
+df.describe()
+
+#step2 display the first 5 rows
+print("First five rows : ")
+df.head()
+
+#Step3: print last5 rows
+print("last 5 rows: ")
+df.tail()
