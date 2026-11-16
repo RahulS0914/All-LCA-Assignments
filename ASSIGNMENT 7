@@ -1,0 +1,91 @@
+#ASSIGNMENT 7:
+import pandas as pd
+df=pd.read_csv(r"C:\Users\Admin\Downloads\Titanic-Dataset (2).csv")
+df
+
+# BAR GRAPH
+import matplotlib.pyplot as plt
+
+#count passengers in each class 
+counts=df["Pclass"].value_counts().sort_index()
+
+#plot the bar graph
+plt.bar(counts.index,counts.values)
+
+#add labels and titles
+plt.xlabel("Passenger Class")
+plt.ylabel("Number of Passengers")
+plt.title("Number of passenger in each class")
+plt.xticks([1,2,3])
+#display the graph
+plt.show()
+
+#GROUPBY BAR GRAPH
+counts=df.groupby(["Survived","Sex"]).size().unstack()
+print(counts)
+counts.plot(kind="bar")
+plt.xlabel("Survival Status")
+plt.ylabel("Number of Passengers")
+plt.title("Titanic Survival by Gender")
+
+plt.xticks([0,1],["Not survived","Survived"],rotation=0)
+plt.show()
+
+
+#SCATTTER PLOT: [age,fare],[pclass,fare],[pclass,age]
+data=df.dropna(subset=["Age","Fare"])
+#create scatter plot
+plt.scatter(data["Age"],data["Fare"])
+
+#Add labels and titles
+plt.xlabel("Age")
+plt.ylabel("Fare")
+plt.title("Age vs Fare in titanic dataset")
+#display graph
+plt.show()
+
+
+data=df.dropna(subset=["Age","Fare"])
+#create scatter plot
+plt.scatter(data["Age"],data["Fare"])
+
+#Add labels and titles
+plt.xlabel("Age")
+plt.ylabel("Fare")
+plt.title("Age vs Fare in titanic dataset")
+plt.xticks([1,2,3])
+plt.grid(True)
+#display graph
+plt.show()
+
+
+data=df.dropna(subset=["Pclass","Fare"])
+#create scatter plot
+plt.scatter(data["Pclass"],data["Fare"])
+
+#Add labels and titles
+plt.xlabel("Pclass")
+plt.ylabel("Fare")
+plt.title("Age vs Fare in titanic dataset")
+plt.xticks([1,2,3])
+plt.grid(True)
+#display graph
+plt.show()
+
+
+#line Graph
+#Calculate avg fare for each class
+avg_fare=df.groupby("Pclass")["Fare"].mean()
+
+#draw line graph
+plt.plot(avg_fare.index,avg_fare.values,marker="o")
+
+#add label and titles
+plt.xlabel("Passnger class")
+plt.ylabel("Average Fare")
+plt.title("Avg Fare by Passenger Calss")
+
+plt.xticks([1,2,3])
+plt.grid(True)
+
+plt.show()
